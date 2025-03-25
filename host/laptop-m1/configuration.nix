@@ -67,7 +67,7 @@
     zsh
     kitty
     fastfetch
-    git
+    #git
     nurl
     nh
     nom
@@ -82,7 +82,7 @@
     tlp
     light
     actkbd
-    lazygit
+    #lazygit
 
     # for neovim
     gcc
