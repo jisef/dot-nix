@@ -1,0 +1,22 @@
+{
+  description = "A very basic flake";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    /*apple-silicon-support = {
+      url = "github:tpwrules/nixos-apple-silicon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };*/
+    apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon/19b1103d09b4be12bdbf4c713b0e45fc434b5f6a";
+   };
+
+  outputs = { self, nixpkgs, apple-silicon-support }: {
+    nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        ./host/configuration.nix
+      ];
+      specialArgs = { inherit apple-silicon-support; };
+    };
+  };
+}
