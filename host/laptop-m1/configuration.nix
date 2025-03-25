@@ -48,7 +48,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
@@ -67,7 +67,6 @@
     zsh
     kitty
     fastfetch
-    #git
     nurl
     nh
     nom
@@ -82,14 +81,12 @@
     tlp
     light
     actkbd
-    #lazygit
 
     # for neovim
     gcc
     clang
     cl
     zig
-
   ];
   # Hyprland
   programs.hyprland.enable = true;
@@ -98,6 +95,13 @@
     AQ_DRM_DEVICES = "/dev/dri/card0";
   };
   services.tlp.settings = { STOP_CHARGE_THRESH_BAT0 = 80; };
+  # when true firefox wont start 
+  #services.displayManager.ly.enable = false;
+  services.xserver = {
+    displayManager.startx.enable = true;
+  };
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -7,7 +7,6 @@
       userName = "josef";
       userEmail = "josef@sigma.kys";
     };
-
     programs.lazygit = { enable = true; };
   };
 }

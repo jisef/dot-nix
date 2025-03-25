@@ -14,25 +14,29 @@
     walker.url = "github:abenz1267/walker";
   };
 
-  outputs = { self, nixpkgs, apple-silicon-support, home-manager, walker }@inputs: {
-    nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
-      modules = [
-        ./host/laptop-m1/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.josef = import ./host/laptop-m1/home.nix;
-          home-manager.backupFileExtension = "backup";
-        }
+  outputs =
+    { self, nixpkgs, apple-silicon-support, home-manager, walker }@inputs: {
+      nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./host/laptop-m1/configuration.nix
 
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.josef = import ./host/laptop-m1/home.nix;
+            home-manager.backupFileExtension = "backup";
+          }
 
-        ./config/git.nix
-        ./config/walker.nix
+          #walker.homeManagerModules.default
 
-      ];
-      specialArgs = { inherit apple-silicon-support home-manager inputs; };
+          ./config/git.nix
+          ./config/walker.nix
+          ./config/bar.nix
+
+        ];
+        specialArgs = { inherit apple-silicon-support home-manager inputs; };
+      };
     };
-  };
 }
