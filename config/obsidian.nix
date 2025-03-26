@@ -1,3 +1,3 @@
-{pkgs, ...}: {
-  environment.systemPackagess = with pkgs; [ obsidian ];
+{pkgs, config, inputs,  ...}: {
+  environment.systemPackages = with pkgs; [ obsidian ];
 }
