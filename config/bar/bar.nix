@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ...}: {
+{config, pkgs, inputs, home-manafer, ...}: {
   home-manager.users.josef = {
     programs.waybar = {
       enable = true;
@@ -23,12 +23,7 @@
           };
         };
       };
-      style = ''
-        #workspaces button.active {
-          background-color: #64727D;
-        }
-      '';
-
+      style = builtins.readFile ./style.css;
     };
   };
 }

@@ -33,7 +33,7 @@
 
           ./config/git.nix
           #./config/walker.nix
-          ./config/bar.nix
+          ./config/bar/bar.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };

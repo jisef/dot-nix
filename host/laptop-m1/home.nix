@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../config/bar/bar.nix
+  #  ../../config/bar/bar.nix
   ];
 
   home.username = "josef";
