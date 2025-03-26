@@ -1,3 +1,4 @@
+# needs to be name syncthingg.nix i may or may not did something weird with git
 { config, pkgs, settings, ... }:
 
 {
