@@ -38,6 +38,7 @@
           ./config/fastfetch.nix
           ./config/jetbrains.nix
           ./config/docker.nix
+          ./config/syncthing.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };
