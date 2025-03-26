@@ -84,6 +84,8 @@
     light
     actkbd
     rofi-wayland
+    chafa
+
     # for neovim
     gcc
     clang
