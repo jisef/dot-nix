@@ -35,6 +35,8 @@
           ./config/bar/bar.nix
           ./config/obsidian.nix
           # ./config/launcher.nix
+          ./config/fastfetch.nix
+          ./config/jetbrains.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };
