@@ -1,0 +1,14 @@
+window#waybar {
+  background-color: rgba(43, 48, 59, 0.5);
+  border-radius: 10px;
+  margin: 0 8px;
+  color: white;
+}
+#battery, #clock { padding: 0 10px;
+}
+
+#workspaces button.active {
+  background-color: #285577;
+  color: #ffffff;
+}
+

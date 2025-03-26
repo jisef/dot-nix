@@ -13,7 +13,13 @@
           };
 
           "battery" = {
-            interval = 60;
+            interval= 5;
+            format = "{capacity}% {power}W";
+            format-icons = ["" "" "" "" ""];
+            states = {
+              warning = 30;
+              critical = 5;
+            };
           };
           modules-left = ["hyprland/workspaces"];
 
