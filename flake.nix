@@ -37,6 +37,7 @@
           # ./config/launcher.nix
           ./config/fastfetch.nix
           ./config/jetbrains.nix
+          ./config/docker.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };
