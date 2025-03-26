@@ -11,6 +11,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   
+  
 
   #home-manager.enable = true;
 
@@ -56,7 +57,7 @@
   programs.zsh.enable = true;
   users.users.josef = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
 
@@ -85,6 +86,7 @@
     actkbd
     rofi-wayland
     chafa
+    lazydocker
 
     # for neovim
     gcc
@@ -104,8 +106,6 @@
   services.xserver = {
     displayManager.startx.enable = true;
   };
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
