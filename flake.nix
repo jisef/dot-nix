@@ -32,8 +32,9 @@
           #walker.homeManagerModules.default
 
           ./config/git.nix
-          #./config/walker.nix
           ./config/bar/bar.nix
+          ./config/obsidian.nix
+          # ./config/launcher.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };

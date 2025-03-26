@@ -9,6 +9,8 @@
   # Adds patched Mesa GPU Driver and Stuff
   nixpkgs.overlays = [ apple-silicon-support.overlays.apple-silicon-overlay ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  
 
   #home-manager.enable = true;
 
@@ -81,7 +83,7 @@
     tlp
     light
     actkbd
-
+    rofi-wayland
     # for neovim
     gcc
     clang
