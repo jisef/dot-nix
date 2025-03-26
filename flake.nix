@@ -32,7 +32,7 @@
           #walker.homeManagerModules.default
 
           ./config/git.nix
-          ./config/walker.nix
+          #./config/walker.nix
           ./config/bar.nix
 
         ];

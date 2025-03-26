@@ -14,10 +14,21 @@
 
           "battery" = {
             interval = 60;
+          };
+          modules-left = ["hyprland/workspaces"];
 
+          "hyprland/workspaces" = {
+            format = "{name}";
+            
           };
         };
       };
+      style = ''
+        #workspaces button.active {
+          background-color: #64727D;
+        }
+      '';
+
     };
   };
 }

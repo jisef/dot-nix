@@ -1,6 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
+
+
+  imports = [
+    ../../config/bar/bar.nix
+  ];
   home.username = "josef";
   home.homeDirectory = "/home/josef";
   home.stateVersion = "23.11"; # Adjust to your NixOS version
