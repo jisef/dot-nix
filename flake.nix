@@ -39,7 +39,6 @@
           ./config/git.nix
           ./config/bar/bar.nix
           ./config/obsidian.nix
-          # ./config/launcher.nix
           ./config/fastfetch.nix
           ./config/jetbrains.nix
           ./config/docker.nix
