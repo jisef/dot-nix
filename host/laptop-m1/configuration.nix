@@ -21,6 +21,10 @@
   };
   services.blueman.enable = true;
 
+  # Logitech support
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;

@@ -24,8 +24,10 @@
           modules-left = ["hyprland/workspaces"];
 
           "hyprland/workspaces" = {
+            all-outputs = true;
             format = "{name}";
-            
+            on-click = "activate";
+            separate-outputs = true; # way only shows wokrspaces on current monitor
           };
         };
       };
