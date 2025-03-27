@@ -3,6 +3,7 @@
     jetbrains.idea-ultimate
     jetbrains.rust-rover
     jetbrains.datagrip
+    scenebuilder
   ];
   programs.java = {
     enable = true;

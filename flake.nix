@@ -39,6 +39,7 @@
           ./config/jetbrains.nix
           ./config/docker.nix
           ./config/syncthingg.nix
+          ./config/firefox.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs; };
