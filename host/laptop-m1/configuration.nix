@@ -10,11 +10,19 @@
   nixpkgs.overlays = [ apple-silicon-support.overlays.apple-silicon-overlay ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
   
   
 
-  #home-manager.enable = true;
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
 
+
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
@@ -64,7 +72,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim 
     cargo
     wget
     zsh
@@ -87,6 +95,8 @@
     rofi-wayland
     chafa
     lazydocker
+    yazi
+    unzip
 
     # for neovim
     gcc
@@ -100,7 +110,8 @@
     WLR_DRM_DEVICES = "/dev/dri/card0";
     AQ_DRM_DEVICES = "/dev/dri/card0";
   };
-  services.tlp.settings = { STOP_CHARGE_THRESH_BAT0 = 80; };
+  #services.tlp.enable = true;
+  #services.tlp.charge_thresholds = "40 80";
   # when true firefox wont start 
   #services.displayManager.ly.enable = false;
   services.xserver = {
