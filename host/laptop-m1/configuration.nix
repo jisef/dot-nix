@@ -12,8 +12,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
   
-  
-
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
