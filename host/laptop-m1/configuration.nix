@@ -99,6 +99,7 @@
     lazydocker
     yazi
     unzip
+    hyprland
 
     # for neovim
     gcc

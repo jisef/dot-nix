@@ -48,7 +48,7 @@
           ./config/docker.nix
           ./config/syncthingg.nix
           ./config/firefox.nix
-          ./config/hyprland/hyprland.nix
+          #./config/hyprland/hyprland.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs firefox-addons hyprland; };
