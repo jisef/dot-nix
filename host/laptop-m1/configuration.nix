@@ -78,30 +78,42 @@
     cargo
     wget
     zsh
-    kitty
-    fastfetch
     nurl
     nh
-    nom
-    fzf
-    eza
-    zoxide
-    ghostty
     imagemagick
     home-manager
     nixfmt-classic
-    btop
-    tlp
     light
     actkbd
     rofi-wayland
     chafa
-    lazydocker
     yazi
     unzip
     hyprland
 
-    # for neovim
+
+    # ####################
+    # tools
+    # ####################
+    btop
+    ripgrep
+    inxi
+    nom
+    fzf
+    eza
+    zoxide
+    lazydocker
+    fastfetch
+
+    # ####################
+    # Terminals
+    # ####################
+    kitty
+
+
+    # ####################
+    # For Neovim
+    # ####################
     gcc
     clang
     cl
@@ -113,10 +125,6 @@
     WLR_DRM_DEVICES = "/dev/dri/card0";
     AQ_DRM_DEVICES = "/dev/dri/card0";
   };
-  #services.tlp.enable = true;
-  #services.tlp.charge_thresholds = "40 80";
-  # when true firefox wont start 
-  #services.displayManager.ly.enable = false;
   services.xserver = {
     displayManager.startx.enable = true;
   };
