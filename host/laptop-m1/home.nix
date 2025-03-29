@@ -14,11 +14,6 @@
   programs.home-manager.enable = true;
 
   # Git configuration
-  programs.git = {
-    enable = true;
-    userName = "josef";
-  };
-
   programs.zsh = { enable = true; };
 
   #Enable GPU support (if using experimental GPU driver)
