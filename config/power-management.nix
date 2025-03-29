@@ -1,6 +1,10 @@
 {config, pkgs, inputs, ...}: {
-  programs.battery = {
+  environment.systemPackages = with pkgs; [ tlp ];
+  services.tlp = {
     enable = true;
-    chargeLimit = 80;
+    settings = {
+      START_CHARGE_THRESH_macsmc-battery= 40; # Start charging when below 40%
+      STOP_CHARGE_THRESH_macsmc-battery= 80;  # Stop charging when above 80%
+    };
   };
 }
