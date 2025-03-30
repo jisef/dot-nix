@@ -8,8 +8,8 @@
     services.hyprpaper = {
       enable = true;
       settings = {
-        preload = "~/Downloads/wallhaven-016871.jpg";
-        wallpaper = [ ",~/Downloads/wallhaven-016871.jpg" ];
+        preload =  [ "~/Downloads/wallhaven-016871.jpg" "~/Downloads/wallhaven-kxd9d1.jpg" ];
+        wallpaper = [ ",~/Downloads/wallhaven-kxd9d1.jpg" ];
       };
     };
   };

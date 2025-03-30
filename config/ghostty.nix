@@ -5,6 +5,12 @@
     programs.ghostty = {
       enable = true;
       clearDefaultKeybinds = false;
+      enableZshIntegration = true;
+      settings = {
+        font-family = "JetBrains Mono";
+        background-opacity = 0.9;
+        background-blur = true;
+      };
     };
   };
 }
