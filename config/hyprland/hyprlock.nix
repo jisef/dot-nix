@@ -22,6 +22,11 @@
           no_fade_out = false;
         };
 
+        animations = {
+          bezier = "linear, 1,1, 0, 0";
+          animation = "fadeIn, 1, 9, linear";
+        };
+
         # Input-Field
         input-field = {
           size = "270, 60";
