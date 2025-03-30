@@ -1,15 +1,6 @@
-{config, pkgs, inputs, ...}: {
-  environment.systemPackages = with pkgs; [
-    hyprpaper
+{ config, pkgs, inputs, ... }: {
+  imports = [
+    ./hyprlock.nix
+    ./hyprpaper.nix
   ];
-
-  home-manager.users.josef = {
-    services.hyprpaper = {
-      enable = true;
-      settings = {
-        preload = "~/Downloads/wallhaven-016871.jpg";
-        wallpaper = [ ",~/Downloads/wallhaven-016871.jpg" ];
-      };
-    };
-  };
-};
+}

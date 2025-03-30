@@ -17,9 +17,7 @@
             interval = 5;
             format = "{icon} {capacity}% {power}W";
             format-charging = "󱐥{capacity}% {power}W";
-            
             format-icons = [ "" "" "" "" "" ];
-            #format-charging-icons = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂅" ];
             
             states = {
               warning = 25;
@@ -41,7 +39,6 @@
             tooltip-format-ethernet = "";
             
             tooltip-format-disconnected = "";
-
           };
  
 

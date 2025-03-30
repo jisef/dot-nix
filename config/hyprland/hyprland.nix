@@ -3,8 +3,9 @@
 
 {
   imports = [
-    # inputs.hyprland.homeManagerModules.default
+    ./plugins.nix
   ];
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -119,6 +120,7 @@
         # Keybindings
         "$mainMod" = "SUPER";
         bind = [
+          "$mainMod, L, exec, hyprlock"
           "$mainMod, Q, exec, $terminal"
           "$mainMod, R, exec, rofi -show drun"
           "$mainMod, C, killactive,"

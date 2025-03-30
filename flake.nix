@@ -29,7 +29,6 @@
         system = "aarch64-linux";
         modules = [
           ./host/laptop-m1/configuration.nix
-
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -38,9 +37,9 @@
             home-manager.backupFileExtension = "backup";
           }
 
-          #walker.homeManagerModules.default
-
           ./config/git.nix
+          ./config/power-management.nix
+          ./config/ghostty.nix
           ./config/bar/bar.nix
           ./config/obsidian.nix
           ./config/fastfetch.nix
