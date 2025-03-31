@@ -37,8 +37,10 @@
 
             format-ethernet = "󰈁";
             tooltip-format-ethernet = "";
+            format-disconnected = "󰖪 ";
+
             
-            tooltip-format-disconnected = "";
+            #tooltip-disconnected = "󰖪";
           };
  
 

@@ -64,7 +64,6 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  programs.zsh.enable = true;
   users.users.josef = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
@@ -90,6 +89,7 @@
     yazi
     unzip
     hyprland
+    vitetris
 
 
     # ####################
