@@ -9,7 +9,7 @@
         right_format = "$cmd_duration";
         add_newline = false;
 
-        format = ''$directory$hostname$git_status$git_branch
+        format = ''$directory$hostname$git_branch$git_status
 $character'';
         
         character = {
@@ -38,18 +38,14 @@ $character'';
         };
 
         git_status = {
-          conflicted = "⚠️";
           ahead = "⇡";
           behind = "⇣";
           diverged = "⇕";
-          untracked = "";
           modified = "✎";
-          staged = "+";
           deleted = "✖";
-          renamed = "»";
           style = "bold yellow";
-          #format = "[($ahead_count)]($style) ";
         };
+
         hostname = {
           ssh_only = true;
           format = "[on $hostname](bold yellow)";

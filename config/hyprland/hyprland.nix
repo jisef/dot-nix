@@ -50,7 +50,7 @@
 
 
         # Autostart programs
-        exec-once = [ "$terminal" "waybar" "hypridle"];
+        exec-once = [ "$terminal" "waybar" "hypridle" "systemctl --user start hyprpolkitagent" ];
 
         # Environment variables
         env = [
