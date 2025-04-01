@@ -16,8 +16,9 @@
             }
           ];  
         };
-        extensions = with inputs.firefox-addons; [
-          
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ghostery
+          privacy-badger
         ];
 
         settings = {

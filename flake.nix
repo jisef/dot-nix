@@ -17,19 +17,25 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   hyprland = {
+    hyprland = {
       url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+   nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
-    { self, nixpkgs, apple-silicon-support, home-manager, walker,firefox-addons, hyprland }@inputs: {
+    { self, nixpkgs, apple-silicon-support, home-manager, walker,firefox-addons, hyprland, nur }@inputs: {
       nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
           ./host/laptop-m1/configuration.nix
           home-manager.nixosModules.home-manager
+          nur.modules.nixos.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -51,7 +57,7 @@
           ./config/shell.nix
 
         ];
-        specialArgs = { inherit apple-silicon-support home-manager inputs firefox-addons hyprland; };
+        specialArgs = { inherit apple-silicon-support home-manager inputs firefox-addons hyprland nur; };
         # extraSpecialArgs = {inherit inputs;};
       };
     };
