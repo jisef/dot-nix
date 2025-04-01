@@ -1,6 +1,5 @@
 { config, pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [ hyprlock ];
-
   home-manager.users.josef = {
 
     # ###############################

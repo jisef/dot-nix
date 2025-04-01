@@ -1,10 +1,13 @@
-# home.nix or similar
+# Contains Hyprland 
+
 { config, pkgs, inputs, ... }:
 
 {
+
   imports = [
     ./plugins.nix
   ];
+  environment.systemPackages = with pkgs; [ brightnessctl ];
 
   programs.hyprland = {
     enable = true;
@@ -47,7 +50,7 @@
 
 
         # Autostart programs
-        exec-once = [ "$terminal" "waybar" ];
+        exec-once = [ "$terminal" "waybar" "hypridle"];
 
         # Environment variables
         env = [
@@ -168,7 +171,7 @@
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
-
+        
         bindel = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"

@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [ hypridle ];
-  services.hypridle = {
+  home-manager.users.josef.services.hypridle = {
     enable = true;
     settings = {
       general = {
@@ -9,7 +9,7 @@
 
       listener = [
         {
-          timeout = 10;
+          timeout = 120;
           on-timeout = "loginctl lock-session";
         }
       ];
