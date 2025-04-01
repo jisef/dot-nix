@@ -1,20 +1,19 @@
 { config, pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [ kanata ];
 
-  home-manager.users.josef = {
-    services.kanata = {
-      enable = true;
-      keyboards.default = {
-        config = ''
-          defalias escape_control = { tap_hold { tap: Control_L, hold: Control_L } }
+  users.users.josef.extraGroups = [ "uinput" ];
 
-          defsrc caps_lock
+  services.kanata = {
+    enable = true;
+    keyboards.default = {
+      config = ''
+        (defsrc caps)
 
-          deflayer default {
-              caps_lock = @escape_control
-          }
-        '';
-      };
+        (deflayer default
+          lctl
+        )
+      '';
     };
   };
 }
+
