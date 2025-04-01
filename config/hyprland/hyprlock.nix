@@ -18,7 +18,7 @@
         # General
         general = {
           no_fade_in = false;
-          no_fade_out = false;
+          no_fade_out = true;
         };
 
         animations = {
