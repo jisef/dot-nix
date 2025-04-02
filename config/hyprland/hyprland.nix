@@ -1,12 +1,10 @@
-# Contains Hyprland 
+# Contains Hyprland
 
 { config, pkgs, inputs, ... }:
 
 {
 
-  imports = [
-    ./plugins.nix
-  ];
+  imports = [ ./plugins.nix ];
   environment.systemPackages = with pkgs; [ brightnessctl ];
 
   programs.hyprland = {
@@ -44,19 +42,22 @@
         monitor = "eDP-1, highres,auto,2";
         #monitor = "";
         #monitor = [
-         # ",preferred,auto,1"
-         # "eDP-1,disable"
+        # ",preferred,auto,1"
+        # "eDP-1,disable"
         #];
 
-
         # Autostart programs
-        exec-once = [ "$terminal" "waybar" "hypridle" "systemctl --user start hyprpolkitagent" ];
+        exec-once = [
+          "$terminal"
+          "waybar"
+          "hypridle"
+          "systemctl --user start hyprpolkitagent"
+          "wl-paste --type text --watch cliphist store # Stores only text data"
+          "wl-paste --type image --watch cliphist store # Stores only image data"
+        ];
 
         # Environment variables
-        env = [
-          "XCURSOR_SIZE,24"
-          "HYPRCURSOR_SIZE,24"
-        ];
+        env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
 
         # Look and feel settings
         decoration = {
@@ -123,13 +124,14 @@
         # Keybindings
         "$mainMod" = "SUPER";
         bind = [
+          "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, L, exec, hyprlock"
           "$mainMod, Q, exec, $terminal"
-          "$mainMod, R, exec, rofi -show drun"
+          "$mainMod, R, exec, rofi -show drun -show-icons"
           "$mainMod, C, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, $fileManage"
-          "$mainMod, V, togglefloating,"
+          #"$mainMod, V, togglefloating,"
           "$mainMod, R, exec, $menu"
           "$mainMod, P, pseudo,"
           "$mainMod, J, togglesplit,"
@@ -160,18 +162,19 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
-
+  
           "$mainMod, S, togglespecialworkspace, magic"
           "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
+          " "
         ];
         bindm = [
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
-        
+
         bindel = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -194,5 +197,4 @@
       };
     };
   };
-
 }
