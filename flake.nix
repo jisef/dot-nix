@@ -57,6 +57,7 @@
           ./config/shell.nix
           ./config/kanata.nix
           ./config/clipboard.nix
+          ./config/ly.nix
 
         ];
         specialArgs = { inherit apple-silicon-support home-manager inputs firefox-addons hyprland nur; };

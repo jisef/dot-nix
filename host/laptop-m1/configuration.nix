@@ -118,6 +118,7 @@
     clang
     cl
     zig
+    zed-editor
   ];
   # Hyprland
   programs.hyprland.enable = true;
@@ -128,6 +129,7 @@
   services.xserver = {
     displayManager.startx.enable = true;
   };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
