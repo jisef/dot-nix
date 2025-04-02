@@ -104,6 +104,7 @@
     zoxide
     lazydocker
     fastfetch
+    pipes
 
     # ####################
     # Terminals
@@ -118,7 +119,6 @@
     clang
     cl
     zig
-    zed-editor
   ];
   # Hyprland
   programs.hyprland.enable = true;
