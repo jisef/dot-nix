@@ -28,6 +28,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
+
+  # when lid closed -> gibernation
+  services.logind = {
+    extraConfig = ''
+      HandleLidSwitch=hibernate
+    '';
+  };
+
   networking.hostName = "nixos-mac"; # Define your hostname.
 
   networking.networkmanager.enable = true;
@@ -110,6 +118,8 @@
     # Terminals
     # ####################
     kitty
+
+   
 
 
     # ####################

@@ -22,14 +22,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-   nur = {
+    nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
-  outputs =
-    { self, nixpkgs, apple-silicon-support, home-manager, walker,firefox-addons, hyprland, nur }@inputs: {
+  outputs = { self, nixpkgs, apple-silicon-support, home-manager, walker
+    , firefox-addons, hyprland, nur }@inputs: {
       nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
@@ -57,9 +58,13 @@
           ./config/shell.nix
           ./config/kanata.nix
           ./config/clipboard.nix
+          ./config/rust.nix
 
         ];
-        specialArgs = { inherit apple-silicon-support home-manager inputs firefox-addons hyprland nur; };
+        specialArgs = {
+          inherit apple-silicon-support home-manager inputs firefox-addons
+            hyprland nur;
+        };
         # extraSpecialArgs = {inherit inputs;};
       };
     };

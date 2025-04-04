@@ -1,5 +1,5 @@
 { config, pkgs, inputs, ... }: {
-  environment.systemPackages = with pkgs; [ hyprpolkitagent ] ;
+  environment.systemPackages = with pkgs; [ hyprpolkitagent hyprshot ] ;
   imports = [
     ./hyprlock.nix
     ./hyprpaper.nix

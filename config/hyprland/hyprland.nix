@@ -124,6 +124,9 @@
         # Keybindings
         "$mainMod" = "SUPER";
         bind = [
+          "$mainMod, G, exec, hyprshot -m window"
+          "$mainMod SHIFT, G, exec, hyprshot -m region"
+
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, L, exec, hyprlock"
           "$mainMod, Q, exec, $terminal"
@@ -191,7 +194,14 @@
         ];
         windowrulev2 = [
           "suppressevent maximize, class:.*"
+          "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+          "noanim, class:^(xwaylandvideobridge)$"
+          "noinitialfocus, class:^(xwaylandvideobridge)$"
+          "maxsize 1 1, class:^(xwaylandvideobridge)$"
+          "noblur, class:^(xwaylandvideobridge)$"
+          "nofocus, class:^(xwaylandvideobridge)$"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          "stayfocused,class:^(com.oracle.javafx.scenebuilder.app.SceneBuilderApp)$"
         ];
       };
     };

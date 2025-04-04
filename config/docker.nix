@@ -20,6 +20,7 @@
   virtualisation.docker.enable = true;
 
   # start containers with : sudo systemctl start "docker-<name>""
+  /*
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
@@ -34,7 +35,7 @@
           MYSQL_PASSWORD = "cisco";
         };
         volumes = [
-          "/home/josef/docker/data-mySQL:/var/lib/mysql"
+          "~/container/data-mySQL:/var/lib/mysql"
         ];
       };
 
@@ -47,6 +48,6 @@
         };
       };
     };
-  };
+  };*/
 }
 

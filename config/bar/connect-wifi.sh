@@ -25,12 +25,13 @@ if [ "$ssid" = "$pep" ]; then
     echo "$school"
   fi
 else
+  nmcli dev wifi con pep -a
   echo "else"
-  if [[ -z $("$avaiable" | grep "$home") ]]; then # when no value
-    nmcli dev wifi con "$school"
-    echo "$school"
-  else
-    nmcli dev wifi con "$home"
-    echo "$home"
-  fi
+#  if [[ -z $("$avaiable" | grep "$home") ]]; then # when no value
+#    nmcli dev wifi con "$school"
+#    echo "$school"
+#  else
+#    nmcli dev wifi con "$home"
+#    echo "$home"
+#  fi
 fi
