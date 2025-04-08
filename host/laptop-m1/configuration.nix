@@ -113,6 +113,7 @@
     lazydocker
     fastfetch
     pipes
+    isd
 
     # ####################
     # Terminals

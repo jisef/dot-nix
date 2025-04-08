@@ -40,11 +40,11 @@
         "$terminal" = "ghostty";
         # Monitor configuration
         monitor = "eDP-1, highres,auto,2";
-        #monitor = "";
-        #monitor = [
-        # ",preferred,auto,1"
-        # "eDP-1,disable"
-        #];
+
+ #       monitor = [
+ #        ",preferred,auto,1"
+ #        "eDP-1,disable"
+ #       ];
 
         # Autostart programs
         exec-once = [
