@@ -59,6 +59,7 @@
           ./config/kanata.nix
           ./config/clipboard.nix
           ./config/rust.nix
+          ./config/bitwarden.nix
 
         ];
         specialArgs = {

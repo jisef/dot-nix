@@ -1,3 +1,3 @@
 {config, pkgs, ...}: {
-  environment.systemPackages = with pkgs; [ bitwarden-desktop bitwarden-cli ]
+  environment.systemPackages = with pkgs; [ bitwarden-desktop bitwarden-cli ];
 }
