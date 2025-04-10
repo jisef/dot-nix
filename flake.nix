@@ -11,7 +11,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    walker.url = "github:abenz1267/walker";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -22,15 +21,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    walker = {
+      url = "github:abenz1267/walker";
+    };
+     
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { self, nixpkgs, apple-silicon-support, home-manager, walker
-    , firefox-addons, hyprland, nur }@inputs: {
+  outputs = { self, nixpkgs, apple-silicon-support, home-manager,
+     firefox-addons, hyprland, nur, walker }@inputs: {
       nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
@@ -60,13 +62,14 @@
           ./config/clipboard.nix
           ./config/rust.nix
           ./config/bitwarden.nix
+          ./config/walker.nix
 
         ];
         specialArgs = {
           inherit apple-silicon-support home-manager inputs firefox-addons
-            hyprland nur;
+            hyprland nur walker;
         };
-        # extraSpecialArgs = {inherit inputs;};
+#        extraSpecialArgs = {walker};
       };
     };
 }
