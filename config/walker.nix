@@ -1,6 +1,4 @@
 { config, inputs, pkgs, ... }: {
-/*  import = [ inputs.walker.homeManagerModules.default ];
-
   nix.settings = {
     substituters =
       [ "https://walker-git.cachix.org" "https://walker.cachix.org" ];
@@ -11,6 +9,7 @@
   };
 
   home-manager.users.josef = {
+    imports = [ inputs.walker.homeManagerModules.default ];
     programs.walker = {
       enable = true;
       runAsService = true;
@@ -25,11 +24,6 @@
       };
 
       # If this is not set the default styling is used.
-      style = ''
-        * {
-          color: #dcd7ba;
-        }
-      '';
     };
-  };*/
+  };
 }
