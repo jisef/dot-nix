@@ -11,7 +11,7 @@
       overrideDevices =
         false; # overrides any devices added or deleted through the WebUI
       overrideFolders =
-        true; # overrides any folders added or deleted through the WebUI
+        false; # overrides any folders added or deleted through the WebUI
       settings = {
         folders = {
           "Documents/Synced" =

@@ -8,11 +8,14 @@
       settings = {
         mainBar = {
           layer = "top";
-          height = 35;
+          height = 38;
+          margin = "8";
+          padding = "1";
+          spacing = "4";
           # ###############
           # MOdules Right
           # ###############
-          modules-right = [ "network" "battery" ];
+          modules-right = [  "network" "battery" "pulseaudio"];
           "battery" = {
             interval = 5;
             format = "{icon} {capacity}% {power}W";
@@ -25,6 +28,9 @@
             };
           };
 
+          
+
+           
           "network" = {
             tooltip = true;
             interval = 5;
@@ -42,7 +48,23 @@
             
             #tooltip-disconnected = "󰖪";
           };
- 
+
+          "memory" = {
+            format = "{percentage}%";
+          };
+
+          "pulseaudio"  = {
+            tooltip = true;
+            format-muted = "";
+            tooltip-format = "{format_source} \r\n{desc}";
+            on-click-middle = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.0";
+            max-volume = "100";
+          }; 
+          "load" = {
+            interval = "10";
+            format = "{load1}%";
+            tooltip-format = "1 min: {load1}% \r\n5 min: {load5}% \r\n15 min: {load15}%";
+          };
 
           # ###############
           # Modules Center

@@ -11,7 +11,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
-  
+
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
@@ -23,11 +23,9 @@
   #hardware.logitech.wireless.enable = true;
   #hardware.logitech.wireless.enableGraphical = true;
 
-
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-
 
   # when lid closed -> gibernation
   services.logind = {
@@ -56,6 +54,8 @@
     setupAsahiSound = true;
   };
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
+  services.xserver.enable = false;
+  hardware.graphics.enable = true;
 
   services.xserver.xkb.layout = "de";
   services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -74,14 +74,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.josef = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups =
+      [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
 
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    neovim 
+    neovim
     cargo
     wget
     zsh
@@ -99,7 +100,6 @@
     hyprland
     vitetris
 
-
     # ####################
     # tools
     # ####################
@@ -114,14 +114,15 @@
     fastfetch
     pipes
     isd
+    boot
+    zip
+    sl
+    bat
 
     # ####################
     # Terminals
     # ####################
     kitty
-
-   
-
 
     # ####################
     # For Neovim
@@ -131,16 +132,20 @@
     cl
     zig
   ];
+
   # Hyprland
   programs.hyprland.enable = true;
   environment.sessionVariables = {
     WLR_DRM_DEVICES = "/dev/dri/card0";
     AQ_DRM_DEVICES = "/dev/dri/card0";
   };
-  services.xserver = {
-    displayManager.startx.enable = true;
-  };
 
+  # Login Screen
+  services.xserver = { displayManager.startx.enable = true; };
+
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"
+  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

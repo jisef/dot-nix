@@ -7,22 +7,21 @@
       "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
     ];
   };
-
+  environment.systemPackages = with pkgs; [ gtk4-layer-shell ];
+  services.displayManager.defaultSession = "hyprland";
   home-manager.users.josef = {
     imports = [ inputs.walker.homeManagerModules.default ];
     programs.walker = {
       enable = true;
-      runAsService = true;
-
-      # All options from the config.json can be used here.
+      runAsService = false;
       config = {
-        search.placeholder = "Example";
-        ui.fullscreen = true;
+        search.placeholder = "Search";
         list = { height = 200; };
         websearch.prefix = "?";
         switcher.prefix = "/";
+ #       theme = "nixos";
       };
-
+      # All options from the config.json can be used here.
       # If this is not set the default styling is used.
     };
   };

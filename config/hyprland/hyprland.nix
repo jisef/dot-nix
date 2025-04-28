@@ -38,19 +38,23 @@
 
       settings = {
         "$terminal" = "ghostty";
+        "$runner" = "walker";
+        "$bar" = "waybar";
         # Monitor configuration
         monitor = "eDP-1, highres,auto,2";
 
  #       monitor = [
- #        ",preferred,auto,1"
- #        "eDP-1,disable"
- #       ];
+  #       ",preferred,auto,1"
+   #      "eDP-1,disable"
+    #    ];
 
         # Autostart programs
         exec-once = [
           "$terminal"
-          "waybar"
+          "$bar"
           "hypridle"
+  #        "walker --gapplication-service"
+
           "systemctl --user start hyprpolkitagent"
           "wl-paste --type text --watch cliphist store # Stores only text data"
           "wl-paste --type image --watch cliphist store # Stores only image data"
@@ -117,24 +121,26 @@
 
         # Per-device config
         device = {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
+          name = "pebble-m350s-mouse";
+          sensitivity = -0.4;
         };
 
         # Keybindings
         "$mainMod" = "SUPER";
         bind = [
+          #"$mainMod, R, exec, $runner"
+          "$mainMod, R, exec, rofi -show drun -show-icons"
+
           "$mainMod, G, exec, hyprshot -m window"
           "$mainMod SHIFT, G, exec, hyprshot -m region"
 
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, L, exec, hyprlock"
           "$mainMod, Q, exec, $terminal"
-          "$mainMod, R, exec, rofi -show drun -show-icons"
           "$mainMod, C, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, $fileManage"
-          #"$mainMod, V, togglefloating,"
+          "$mainMod, B, togglefloating,"
           "$mainMod, R, exec, $menu"
           "$mainMod, P, pseudo,"
           "$mainMod, J, togglesplit,"

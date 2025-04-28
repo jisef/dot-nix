@@ -1,9 +1,19 @@
 {config, pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
+    # java 
     jetbrains.idea-ultimate
-    jetbrains.rust-rover
-    jetbrains.datagrip
     scenebuilder
+
+    # rust
+    jetbrains.rust-rover
+
+    # database
+    jetbrains.datagrip
+
+    # php
+    jetbrains.phpstorm
+    php
+    
   ];
   programs.java = {
     enable = true;
