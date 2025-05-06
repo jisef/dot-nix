@@ -13,6 +13,7 @@
             type = "custom";
             format = "┌───────────────────── Hardware ─────────────────────┐";
             keyColor = "magenta";
+            color = "magenta";
           }
           {
             type = "cpu";
@@ -26,26 +27,29 @@
           }
           {
             type = "memory";
-            key = "│ ├";
+            key = "│ ├";
             keyColor = "magenta";
           }
           {
             type = "custom";
             format = "└────────────────────────────────────────────────────┘";
+            keyColor = "magenta";
           }
           "break"
           {
             type = "custom";
             format = "┌───────────────────── Software ─────────────────────┐";
+
+            keyColor = "blue";
           }
           {
             type = "os";
-            key = "│ ├";
+            key = "│ ├";
             keyColor = "blue";
           }
           {
             type = "kernel";
-            key = "│ ├";
+            key = "│ ├";
             keyColor = "blue";
           }
           {
@@ -56,6 +60,7 @@
           {
             type = "custom";
             format = "└────────────────────────────────────────────────────┘";
+            keyColor = "blue";
           }
         ];
       };

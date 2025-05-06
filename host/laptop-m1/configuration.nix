@@ -26,6 +26,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # when lid closed -> gibernation
   services.logind = {
@@ -99,7 +100,10 @@
     unzip
     hyprland
     vitetris
-
+    libreoffice
+    postman
+    vlc
+    
     # ####################
     # tools
     # ####################
@@ -118,6 +122,8 @@
     zip
     sl
     bat
+    usbutils
+    protonvpn-gui
 
     # ####################
     # Terminals

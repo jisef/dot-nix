@@ -38,22 +38,19 @@
 
       settings = {
         "$terminal" = "ghostty";
-        "$runner" = "walker";
+        "$runner" = "fuzzel";
         "$bar" = "waybar";
         # Monitor configuration
-        monitor = "eDP-1, highres,auto,2";
+        #      monitor = "eDP-1, highres,auto,2";
 
- #       monitor = [
-  #       ",preferred,auto,1"
-   #      "eDP-1,disable"
-    #    ];
+        monitor = [ ",preferred,auto,1" "eDP-1,disable" ];
 
         # Autostart programs
         exec-once = [
           "$terminal"
           "$bar"
           "hypridle"
-  #        "walker --gapplication-service"
+          #        "walker --gapplication-service"
 
           "systemctl --user start hyprpolkitagent"
           "wl-paste --type text --watch cliphist store # Stores only text data"
@@ -117,19 +114,41 @@
         };
 
         # Gestures settings
-        gestures = { workspace_swipe = false; };
+        gestures = { workspace_swipe = true; };
+        device = {
+
+            name = "pebble-m350s-mouse";
+            sensitivity = -0.5;
+          };
+
+        
+        /* "device:pebble-m350s-mouse" = {
+             sensitivity = -0.5;
+           };
+
+           "device:mx-mchncl-m-keyboard" = {
+             kb_options = "altwin:swap_alt_win";
+           };
+        */
 
         # Per-device config
-        device = {
-          name = "pebble-m350s-mouse";
-          sensitivity = -0.4;
-        };
+        /* device =[ {
+
+                     name = "pebble-m350s-mouse";
+                     sensitivity = -0.5;
+                   },
+                   {
+           name = "mx-mchncl-m-keyboard";
+                     kb_options = "altwin:swap_alt_win";
+
+                     }];
+        */
 
         # Keybindings
         "$mainMod" = "SUPER";
         bind = [
-          #"$mainMod, R, exec, $runner"
-          "$mainMod, R, exec, rofi -show drun -show-icons"
+          "$mainMod, R, exec, $runner"
+          #"$mainMod, R, exec, rofi -show drun -show-icons"
 
           "$mainMod, G, exec, hyprshot -m window"
           "$mainMod SHIFT, G, exec, hyprshot -m region"
@@ -171,7 +190,7 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
-  
+
           "$mainMod, S, togglespecialworkspace, magic"
           "$mainMod SHIFT, S, movetoworkspace, special:magic"
 

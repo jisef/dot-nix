@@ -33,7 +33,7 @@
            
           "network" = {
             tooltip = true;
-            interval = 5;
+            interval = 3;
             family = "ipv4";
 
             format-wifi = "{icon} ({signalStrength}%)";
