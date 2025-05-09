@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
 
-  environment.systemPackages = with pkgs; [ zsh oh-my-zsh zoxide direnv];
+  environment.systemPackages = with pkgs; [ zsh oh-my-zsh zoxide direnv ];
 
   programs.zsh.enable = true;
 
@@ -8,6 +8,12 @@
     programs.zoxide = {
       enable = true;
       enableBashIntegration = true;
+      enableZshIntegration = true;
+    };
+
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
       enableZshIntegration = true;
     };
 
@@ -20,6 +26,7 @@
         clearfetch = "clear && fastfetch";
         ls = "eza";
         cd = "z";
+        gg = "lazygit";
       };
 
       oh-my-zsh = {
@@ -35,7 +42,7 @@
         add_newline = false;
 
         format = ''
-          $directory$hostname$git_branch$git_status
+          $directory$hostname$git_branch$git_status$nix_shell$golang$rust
           $character'';
 
         character = {
@@ -78,6 +85,14 @@
           format = "[on $hostname](bold yellow)";
           disabled = false;
         };
+
+        nix_shell = {
+          disabled = false;
+        };
+        golang = {
+          symbol = " ";
+        };
+
       };
     };
   };

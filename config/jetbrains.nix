@@ -1,5 +1,5 @@
-{config, pkgs, inputs, ...}: {
-  environment.systemPackages = with pkgs; [
+{config, jetbrainsPkgs, pkgs, inputs, ...}: {
+  environment.systemPackages = with jetbrainsPkgs; [
     # java 
     jetbrains.idea-ultimate
     scenebuilder
@@ -13,6 +13,9 @@
     # php
     jetbrains.phpstorm
     php
+
+    # go
+    jetbrains.goland
     
   ];
   programs.java = {

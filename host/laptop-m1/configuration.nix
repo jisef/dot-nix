@@ -103,7 +103,9 @@
     libreoffice
     postman
     vlc
-    
+    koreader
+
+
     # ####################
     # tools
     # ####################
@@ -120,6 +122,7 @@
     isd
     boot
     zip
+    dnslookup
     sl
     bat
     usbutils

@@ -1,7 +1,7 @@
 # My Asahi-NixOS Config
 ## TODOs
  - [ ] Battery cap is broken (not working with hyprland)
- - [ ] Audio in waybar
+ - [x] Audio in waybar
 ## Tools
 - evtest (to identify pressed keys)
 - brightnessctl (control brightness of keyboard ...)brightnessctl -d kbd_backlight set +80%

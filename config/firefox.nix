@@ -5,6 +5,10 @@
       enable = true;
       languagePacks = [ "en-GB" "de" ];
       profiles.default = {
+        search = {
+          force = true;
+          default = "duckduckgo";
+        };
         bookmarks = {
           force = true;
           settings = [

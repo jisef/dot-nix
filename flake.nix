@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+
+    jetbrainsPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
     apple-silicon-support.url =
       "github:tpwrules/nixos-apple-silicon/19b1103d09b4be12bdbf4c713b0e45fc434b5f6a";
 
@@ -36,7 +39,7 @@
   };
 
   outputs = { self, nixpkgs, apple-silicon-support, home-manager,
-     firefox-addons, hyprland, nur, walker, anyrun }@inputs: {
+     firefox-addons, hyprland, nur, walker, anyrun, jetbrainsPkgs }@inputs: {
       nixosConfigurations.nixos-mac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
@@ -61,7 +64,7 @@
           ./config/syncthingg.nix
           ./config/firefox.nix
           ./config/hyprland/hyprland.nix
-          ./config/shell.nix
+          ./config/terminal.nix
           ./config/kanata.nix
           ./config/clipboard.nix
           ./config/rust.nix
