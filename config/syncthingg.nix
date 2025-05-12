@@ -13,12 +13,16 @@
       overrideFolders =
         false; # overrides any folders added or deleted through the WebUI
       settings = {
+        devices = {
+          "matteo-nixos" = { id=""};
+        };
         folders = {
           "Documents/Synced" =
             { # Folder ID in Syncthing, also the name of folder (label) by default
               label = "Schule";
               path =
                 "/home/josef/Documents/Synced"; 
+                devices = ["matteo-nixos"]
             };
         };
       };
