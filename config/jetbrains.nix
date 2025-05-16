@@ -1,9 +1,11 @@
-{config, jetbrainsPkgs, pkgs, inputs, ...}: {
-  environment.systemPackages = with jetbrainsPkgs; [
+{config, pkgs, inputs, ...}: {
+  environment.systemPackages = with pkgs; [
     # java 
     jetbrains.idea-ultimate
     scenebuilder
-
+    glib
+    gsettings-desktop-schemas
+    gtk3
     # rust
     jetbrains.rust-rover
 
@@ -13,6 +15,7 @@
     # php
     jetbrains.phpstorm
     php
+  php83Extensions.xdebug
 
     # go
     jetbrains.goland

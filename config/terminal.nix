@@ -27,6 +27,7 @@
         ls = "eza";
         cd = "z";
         gg = "lazygit";
+        backup = "~/Documents/source/backup.sh";
       };
 
       oh-my-zsh = {

@@ -105,7 +105,6 @@
     vlc
     koreader
 
-
     # ####################
     # tools
     # ####################
@@ -126,6 +125,17 @@
     sl
     bat
     usbutils
+    rclone
+    ungoogled-chromium
+    quickemu
+    kubectl
+    minikube
+    iotop
+    sysstat
+
+    # ####################
+    # Proton
+    # ####################
     protonvpn-gui
 
     # ####################
@@ -154,7 +164,14 @@
 
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_end_threshold}="80"
+
+    ACTION=="add", SUBSYSTEM=="power_supply", KERNEL=="macsmc-battery", ATTR{charge_control_start_threshold}="30"
   '';
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024;
+    randomEncryption.enable = true;
+  }];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
