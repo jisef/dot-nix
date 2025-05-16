@@ -24,6 +24,7 @@
           ghostery
           privacy-badger
           bitwarden
+          proton-pass
         ];
 
         settings = {
