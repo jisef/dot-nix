@@ -50,7 +50,7 @@
   hardware.asahi = {
     enable = true;
     withRust = true;
-    useExperimentalGPUDriver = true;
+    useExperimentalGPUDriver = false;
     experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
   };
@@ -83,6 +83,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
+    lua
     neovim
     cargo
     wget
@@ -98,12 +99,9 @@
     chafa
     yazi
     unzip
-    hyprland
     vitetris
     libreoffice
-    postman
     vlc
-    koreader
 
     # ####################
     # tools
@@ -128,8 +126,6 @@
     rclone
     ungoogled-chromium
     quickemu
-    kubectl
-    minikube
     iotop
     sysstat
 
@@ -153,7 +149,7 @@
   ];
 
   # Hyprland
-  programs.hyprland.enable = true;
+  #programs.hyprland.enable = true;
   environment.sessionVariables = {
     WLR_DRM_DEVICES = "/dev/dri/card0";
     AQ_DRM_DEVICES = "/dev/dri/card0";
