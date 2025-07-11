@@ -23,8 +23,7 @@
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ghostery
           privacy-badger
-          bitwarden
-          proton-pass
+          #proton-pass
         ];
 
         settings = {

@@ -1,24 +1,27 @@
 {config, pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
     # java 
-    jetbrains.idea-ultimate
-    scenebuilder
-    glib
-    gsettings-desktop-schemas
-    gtk3
+    #jetbrains.idea-ultimate
+    #scenebuilder
+    #glib
+    #gsettings-desktop-schemas
+    #gtk3
     # rust
     jetbrains.rust-rover
 
     # database
     jetbrains.datagrip
 
+    # c#
+    jetbrains.rider
+
     # php
-    jetbrains.phpstorm
-    php
-  php83Extensions.xdebug
+    #jetbrains.phpstorm
+    #php
+    #php83Extensions.xdebug
 
     # go
-    jetbrains.goland
+    #jetbrains.goland
     
   ];
   programs.java = {

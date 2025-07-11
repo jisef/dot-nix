@@ -5,7 +5,7 @@
 {
 
   imports = [ ./plugins.nix ];
-  environment.systemPackages = with pkgs; [ brightnessctl ];
+  environment.systemPackages = with pkgs; [ brightnessctl wl-clipboard];
 
   programs.hyprland = {
     enable = true;
@@ -41,16 +41,19 @@
         "$runner" = "fuzzel";
         "$bar" = "waybar";
         # Monitor configuration
-        #      monitor = "eDP-1, highres,auto,2";
+        monitor = "eDP-1, highres,auto,2";
 
-        monitor = [ ",preferred,auto,1" "eDP-1,disable" ];
 
+  #      monitor = [ ",preferred,auto,1" "eDP-1,disable" ];
+        #monitor = [ "eDP-1, highres,0x,2" ",auto, 0x-1800,1" ];
+
+        #monitor = [ ",mirror,eDP-1,1" "eDP-1,auto, auto, 2" ];
         # Autostart programs
         exec-once = [
           "$terminal"
           "$bar"
           "hypridle"
-          #        "walker --gapplication-service"
+          "walker --gapplication-service"
 
           "systemctl --user start hyprpolkitagent"
           "wl-paste --type text --watch cliphist store # Stores only text data"

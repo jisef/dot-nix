@@ -26,7 +26,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [ "ntfs" "nfs" ];
 
   # when lid closed -> gibernation
   services.logind = {
@@ -50,7 +50,7 @@
   hardware.asahi = {
     enable = true;
     withRust = true;
-    useExperimentalGPUDriver = false;
+    useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
   };
@@ -63,6 +63,10 @@
 
   # CUPS
   services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.hplip 
+    pkgs.hplipWithPlugin 
+  ];
 
   services.pipewire = {
     enable = true;
@@ -83,6 +87,8 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
+    vesktop
+    progress
     lua
     neovim
     cargo
@@ -90,18 +96,16 @@
     zsh
     nurl
     nh
-    imagemagick
     home-manager
     nixfmt-classic
     light
     actkbd
     rofi-wayland
-    chafa
     yazi
     unzip
     vitetris
-    libreoffice
     vlc
+    zed-editor
 
     # ####################
     # tools
@@ -123,21 +127,13 @@
     sl
     bat
     usbutils
-    rclone
-    ungoogled-chromium
     quickemu
-    iotop
-    sysstat
+    termusic
 
     # ####################
     # Proton
     # ####################
     protonvpn-gui
-
-    # ####################
-    # Terminals
-    # ####################
-    kitty
 
     # ####################
     # For Neovim
@@ -169,24 +165,15 @@
     randomEncryption.enable = true;
   }];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  
+  services.openssh.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+
 
   # dont edit
   system.stateVersion = "25.05";

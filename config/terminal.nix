@@ -28,6 +28,8 @@
         cd = "z";
         gg = "lazygit";
         backup = "~/Documents/source/backup.sh";
+        lsd = "ls --sort modified";
+        nos = "nh os switch .";
       };
 
       oh-my-zsh = {
@@ -43,7 +45,7 @@
         add_newline = false;
 
         format = ''
-          $directory$hostname$git_branch$git_status$nix_shell$golang$rust
+          $directory$hostname$git_branch$git_status$nix_shell$golang$rust$python
           $character'';
 
         character = {

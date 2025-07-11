@@ -19,7 +19,7 @@
         list = { height = 200; };
         websearch.prefix = "?";
         switcher.prefix = "/";
- #       theme = "nixos";
+        #       theme = "nixos";
       };
       # All options from the config.json can be used here.
       # If this is not set the default styling is used.

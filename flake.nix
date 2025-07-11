@@ -70,7 +70,7 @@
           ./config/kanata.nix
           ./config/clipboard.nix
           ./config/rust.nix
-          ./config/bitwarden.nix
+          #./config/bitwarden.nix
           ./config/fuzzel.nix
           #./config/walker.nix
           #./config/anyrun.nix

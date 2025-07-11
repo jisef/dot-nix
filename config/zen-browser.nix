@@ -1,1 +1,1 @@
-{ zen-browser, pkgs, ... }: { home-manager.users.josef = { enable = true; }; }
+{ zen-browser, pkgs, ... }: { home-manager.users.josef.programs.zen-browser = { enable = true; }; }
